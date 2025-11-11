@@ -123,7 +123,7 @@ section.active {
     <div class="hidden md:flex gap-1">
       <button class="nav-btn px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800" data-target="home">Home</button>
       <button class="nav-btn px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800" data-target="education">Education</button>
-      <button class="nav-btn px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800" data-target="projects">Projects</button>
+      <button class="nav-btn px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800" data-target="achievements">Achievements</button>
       <button class="nav-btn px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800" data-target="journal">Journal</button>
     </div>
   </div>
@@ -167,41 +167,76 @@ section.active {
     </div>
   </section>
 
-  <!-- EDUCATION -->
-  <section id="education" class="min-h-screen hidden py-20 px-6 md:px-20 text-gray-100">
-    <h2 class="text-4xl font-bold mb-6 text-white">Education</h2>
-    <div class="space-y-6">
-      <div>
-        <h3 class="text-2xl font-semibold">University of the Cordilleras</h3>
-        <p class="text-gray-400">BS in Information Technology, Major in Network and Security (2025–Present)</p>
+    <!-- EDUCATION -->
+  <section id="education" class="h-screen flex flex-col justify-center items-center px-6 md:px-20 text-gray-100">
+    <h2 class="text-4xl font-bold mb-10 text-white text-center">Education</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
+      <!-- University -->
+      <div class="bg-white/5 rounded-xl p-6 border border-white/10 flex flex-col items-center text-center">
+        <img src="https://upload.wikimedia.org/wikipedia/en/2/2b/PHINMA-UPang_Seal.png" alt="PHINMA University of Pangasinan" class="w-24 h-24 mb-4 rounded-full object-cover shadow-md">
+        <h3 class="text-2xl font-semibold text-white">PHINMA University of Pangasinan</h3>
+        <p class="text-gray-400 mt-2">BS in Information Technology<br>Major in Network and Security</p>
+        <p class="text-sm text-gray-500 mt-2">(2024 – Present)</p>
       </div>
-      <div>
-        <h3 class="text-2xl font-semibold">PHINMA University of Pangasinan</h3>
-        <p class="text-gray-400">Senior High School – STEM Health Track, With Honors (Graduated 2024)</p>
+
+      <!-- Senior High -->
+      <div class="bg-white/5 rounded-xl p-6 border border-white/10 flex flex-col items-center text-center">
+        <img src="https://upload.wikimedia.org/wikipedia/en/2/2b/PHINMA-UPang_Seal.png" alt="UPang Senior High" class="w-24 h-24 mb-4 rounded-full object-cover shadow-md">
+        <h3 class="text-2xl font-semibold text-white">PHINMA University of Pangasinan</h3>
+        <p class="text-gray-400 mt-2">Senior High School – STEM Health Track<br>With Honors</p>
+        <p class="text-sm text-gray-500 mt-2">(2022 – 2024)</p>
       </div>
-      <div>
-        <h3 class="text-2xl font-semibold">Clarice Angels School Inc.</h3>
-        <p class="text-gray-400">Junior High School (2019–2022)</p>
+
+      <!-- Junior High -->
+      <div class="bg-white/5 rounded-xl p-6 border border-white/10 flex flex-col items-center text-center">
+        <img src="https://i.imgur.com/gNqC7vX.png" alt="Clarice Angels School Inc." class="w-24 h-24 mb-4 rounded-full object-cover shadow-md">
+        <h3 class="text-2xl font-semibold text-white">Clarice Angels School Inc.</h3>
+        <p class="text-gray-400 mt-2">Junior High School</p>
+        <p class="text-sm text-gray-500 mt-2">(2018 – 2022)</p>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="min-h-screen hidden py-20 px-6 md:px-20 text-gray-100">
-    <h2 class="text-4xl font-bold mb-6 text-white">Projects</h2>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-white/20 transition">
-        <h3 class="text-2xl font-semibold mb-2">Personal Portfolio Website</h3>
-        <p class="text-gray-400 mb-3">A responsive personal portfolio showcasing my education, projects, and experience using Tailwind CSS and JavaScript.</p>
-        <span class="text-sm text-gray-500">Tech: HTML, Tailwind, JavaScript</span>
+   <!-- ACHIEVEMENTS (renamed from Projects) -->
+  <section id="achievements" class="h-screen flex flex-col justify-center items-center px-6 md:px-20 text-gray-100">
+    <h2 class="text-4xl font-bold mb-10 text-white text-center">Achievements</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-6xl">
+      <!-- Achievement 1 -->
+      <div class="bg-white/5 rounded-xl border border-white/10 overflow-hidden hover:border-white/20 transition flex flex-col items-center text-center p-4">
+        <img src="https://i.imgur.com/1mO6DYq.jpeg" alt="With Honors Award" class="w-24 h-24 mb-4 rounded-full object-cover shadow-md">
+        <h3 class="text-lg font-semibold text-white mb-1">With Honors Award</h3>
+        <p class="text-gray-400 text-sm">Recognized for consistent academic excellence during Senior High School.</p>
+        <span class="text-xs text-gray-500 mt-2">PHINMA UPang — 2022–2024</span>
       </div>
-      <div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-white/20 transition">
-        <h3 class="text-2xl font-semibold mb-2">Network Security Simulation</h3>
-        <p class="text-gray-400 mb-3">Simulated network environment to test firewall rules and security layers for educational purposes.</p>
-        <span class="text-sm text-gray-500">Tech: Cisco Packet Tracer, Wireshark</span>
+
+      <!-- Achievement 2 -->
+      <div class="bg-white/5 rounded-xl border border-white/10 overflow-hidden hover:border-white/20 transition flex flex-col items-center text-center p-4">
+        <img src="https://i.imgur.com/MGXoFwP.jpeg" alt="ICT Performance Award" class="w-24 h-24 mb-4 rounded-full object-cover shadow-md">
+        <h3 class="text-lg font-semibold text-white mb-1">Best in ICT Performance</h3>
+        <p class="text-gray-400 text-sm">Awarded for excellence in technology and innovation in ICT projects.</p>
+        <span class="text-xs text-gray-500 mt-2">PHINMA UPang — 2023</span>
+      </div>
+
+      <!-- Achievement 3 -->
+      <div class="bg-white/5 rounded-xl border border-white/10 overflow-hidden hover:border-white/20 transition flex flex-col items-center text-center p-4">
+        <img src="https://i.imgur.com/xZ4Lxye.jpeg" alt="Leadership Recognition" class="w-24 h-24 mb-4 rounded-full object-cover shadow-md">
+        <h3 class="text-lg font-semibold text-white mb-1">Leadership Recognition</h3>
+        <p class="text-gray-400 text-sm">Recognized for initiative and teamwork in leading ICT group projects.</p>
+        <span class="text-xs text-gray-500 mt-2">Clarice Angels School — 2021</span>
+      </div>
+
+      <!-- Achievement 4 -->
+      <div class="bg-white/5 rounded-xl border border-white/10 overflow-hidden hover:border-white/20 transition flex flex-col items-center text-center p-4">
+        <img src="https://i.imgur.com/zMeUpp9.jpeg" alt="Hackathon Participation" class="w-24 h-24 mb-4 rounded-full object-cover shadow-md">
+        <h3 class="text-lg font-semibold text-white mb-1">Hackathon Participant</h3>
+        <p class="text-gray-400 text-sm">Collaborated on a secure app project during an inter-school hackathon.</p>
+        <span class="text-xs text-gray-500 mt-2">PHINMA UPang — 2025</span>
       </div>
     </div>
   </section>
+
 
   <!-- JOURNAL -->
   <section id="journal" class="min-h-screen hidden py-20 px-6 md:px-20 text-gray-100">
