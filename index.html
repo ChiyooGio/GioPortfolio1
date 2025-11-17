@@ -191,9 +191,17 @@ for (let i = 0; i < 50; i++) {
   const p = document.createElement('div');
   p.className = 'particle';
   const size = Math.random() * 3 + 1;
-  Object.assign(p.style, { width: size + 'px', height: size + 'px', left: Math.random() * 100 + '%', top: Math.random() * 100 + '%', animationDuration: (15 + Math.random() * 20) + 's', animationDelay: (Math.random() * 5) + 's' });
+  Object.assign(p.style, { 
+    width: size + 'px', 
+    height: size + 'px', 
+    left: Math.random() * 100 + '%', 
+    top: Math.random() * 100 + '%', 
+    animationDuration: (5 + Math.random() * 5) + 's', // faster
+    animationDelay: (Math.random() * 3) + 's' 
+  });
   container.appendChild(p);
 }
+
 </script>
 
 </body>
