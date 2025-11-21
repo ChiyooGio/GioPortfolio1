@@ -188,6 +188,7 @@ section.active { opacity: 1; transform: translateY(0); }
 
   <!-- Right-side vertical rail (7 circular image holders) -->
   <div class="absolute right-6 top-24 hidden md:flex flex-col items-center gap-2 pointer-events-none">
+      <div class="text-xs text-white bg-white/10 px-3 py-1 rounded-full select-none mb-1">Closer look at the medal</div>
     <div class="absolute left-1/2 top-2 bottom-2 w-[1px] bg-white/10 transform -translate-x-1/2 rounded"></div>
     <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-700 border-2 border-white/20">
       <img src="" alt="ach-rail-1" class="w-full h-full object-cover">
@@ -238,10 +239,12 @@ section.active { opacity: 1; transform: translateY(0); }
 
 </main>
 
-<div class="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
-  <button id="prevBtn" class="w-32 py-3 bg-white/10 backdrop-blur-md text-white font-bold rounded-full border border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.6)] hover:scale-105 transition-all duration-300">Previous</button>
-  <button id="nextBtn" class="w-32 py-3 bg-white/10 backdrop-blur-md text-white font-bold rounded-full border border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.6)] hover:scale-105 transition-all duration-300">Next</button>
-</div>
+  <div id="floatNav" class="fixed flex flex-col items-center gap-2 z-50" style="right:1.5rem;bottom:1.5rem;">
+    <div class="flex flex-col gap-2 items-center pointer-events-auto">
+      <button id="prevBtn" class="w-28 py-2 text-sm bg-white/8 backdrop-blur-md text-white font-bold rounded-full border border-white/12 shadow-[0_0_10px_rgba(255,255,255,0.18)] hover:shadow-[0_0_18px_rgba(255,255,255,0.28)] hover:scale-105 transition-all duration-200">Previous</button>
+      <button id="nextBtn" class="w-28 py-2 text-sm bg-white/8 backdrop-blur-md text-white font-bold rounded-full border border-white/12 shadow-[0_0_10px_rgba(255,255,255,0.18)] hover:shadow-[0_0_18px_rgba(255,255,255,0.28)] hover:scale-105 transition-all duration-200">Next</button>
+    </div>
+  </div>
 
 <footer class="py-8 text-center text-sm text-gray-500 bg-black/80 border-t border-gray-800">
   © 2025 — Gio Dela Masa
@@ -298,6 +301,8 @@ for (let i = 0; i < 50; i++) {
   });
   container.appendChild(p);
 }
+
+
 
 </script>
 
