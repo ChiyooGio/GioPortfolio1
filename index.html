@@ -43,6 +43,23 @@ section.active { opacity: 1; transform: translateY(0); }
   <div class="vignette"></div>
 </div>
 
+<style>
+#prevBtn:hover .arrow-left {
+  opacity: 1;
+  transform: translateX(-5px);
+}
+#nextBtn:hover .arrow-right {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* Ensure smooth initial state */
+.arrow-left, .arrow-right {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+</style>
+
 <nav class="fixed top-0 left-0 right-0 bg-black/70 backdrop-blur-md border-b border-gray-800 z-50">
 <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
 <div class="font-bold text-2xl select-none logo-text">
@@ -228,8 +245,15 @@ section.active { opacity: 1; transform: translateY(0); }
 
   <div id="floatNav" class="fixed flex flex-col items-center gap-2 z-50" style="right:1.5rem;bottom:1.5rem;">
     <div class="flex flex-col gap-2 items-center pointer-events-auto">
-      <button id="prevBtn" class="w-28 py-2 text-sm bg-white/8 backdrop-blur-md text-white font-bold rounded-full border border-white/12 shadow-[0_0_10px_rgba(255,255,255,0.18)] hover:shadow-[0_0_18px_rgba(255,255,255,0.28)] hover:scale-105 transition-all duration-200">Previous</button>
-      <button id="nextBtn" class="w-28 py-2 text-sm bg-white/8 backdrop-blur-md text-white font-bold rounded-full border border-white/12 shadow-[0_0_10px_rgba(255,255,255,0.18)] hover:shadow-[0_0_18px_rgba(255,255,255,0.28)] hover:scale-105 transition-all duration-200">Next</button>
+ <button id="prevBtn" class="w-28 py-2 text-sm bg-white/8 backdrop-blur-md text-white font-bold rounded-full border border-white/12 shadow-[0_0_10px_rgba(255,255,255,0.18)] hover:shadow-[0_0_18px_rgba(255,255,255,0.28)] hover:scale-105 transition-all duration-200 flex justify-between items-center">
+  <span class="arrow-left opacity-0 transition-all duration-300 mr-2">←</span>
+  Previous
+</button>
+
+<button id="nextBtn" class="w-28 py-2 text-sm bg-white/8 backdrop-blur-md text-white font-bold rounded-full border border-white/12 shadow-[0_0_10px_rgba(255,255,255,0.18)] hover:shadow-[0_0_18px_rgba(255,255,255,0.28)] hover:scale-105 transition-all duration-200 flex justify-between items-center">
+  Next
+  <span class="arrow-right opacity-0 transition-all duration-300 ml-2">→</span>
+</button>
     </div>
   </div>
 
@@ -242,6 +266,8 @@ const pages = ["home", "education", "achievement", "journal"];
 let index = 0;
 const navBtns = document.querySelectorAll('.nav-btn');
 const sections = document.querySelectorAll('main section');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
 
 function showPage(id) {
   sections.forEach(s => { s.classList.remove('active'); s.classList.add('hidden'); });
@@ -253,6 +279,18 @@ function showPage(id) {
   navBtns.forEach(b => b.classList.remove('active'));
   const btn = document.querySelector(`.nav-btn[data-target="${id}"]`);
   if(btn) btn.classList.add('active');
+
+  // Update buttons visibility
+  if(index === 0){
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'inline-block';
+  } else if(index === pages.length - 1){
+    prevBtn.style.display = 'inline-block';
+    nextBtn.style.display = 'none';
+  } else {
+    prevBtn.style.display = 'inline-block';
+    nextBtn.style.display = 'inline-block';
+  }
 }
 
 // Initial highlight
@@ -263,13 +301,17 @@ navBtns.forEach(b => b.addEventListener('click', () => {
   showPage(b.dataset.target);
 }));
 
-document.getElementById('nextBtn').onclick = () => {
-  index = (index + 1) % pages.length;
-  showPage(pages[index]);
+nextBtn.onclick = () => {
+  if(index < pages.length - 1){
+    index++;
+    showPage(pages[index]);
+  }
 };
-document.getElementById('prevBtn').onclick = () => {
-  index = (index - 1 + pages.length) % pages.length;
-  showPage(pages[index]);
+prevBtn.onclick = () => {
+  if(index > 0){
+    index--;
+    showPage(pages[index]);
+  }
 };
 
 // Particles
@@ -283,15 +325,13 @@ for (let i = 0; i < 50; i++) {
     height: size + 'px', 
     left: Math.random() * 100 + '%', 
     top: Math.random() * 100 + '%', 
-    animationDuration: (5 + Math.random() * 5) + 's', // faster
+    animationDuration: (5 + Math.random() * 5) + 's', 
     animationDelay: (Math.random() * 3) + 's' 
   });
   container.appendChild(p);
 }
-
-
-
 </script>
+
 
 </body>
 </html>
