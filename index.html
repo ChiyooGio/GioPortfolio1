@@ -276,15 +276,17 @@ section.active { opacity: 1; transform: translateY(0); }
 
   <div id="floatNav" class="fixed flex flex-col items-center gap-2 z-50" style="right:1.5rem;bottom:1.5rem;">
     <div class="flex flex-col gap-2 items-center pointer-events-auto">
- <button id="prevBtn" class="w-28 py-2 text-sm bg-white/8 backdrop-blur-md text-white font-bold rounded-full border border-white/12 shadow-[0_0_10px_rgba(255,255,255,0.18)] hover:shadow-[0_0_18px_rgba(255,255,255,0.28)] hover:scale-105 transition-all duration-200 flex justify-between items-center">
-  <span class="arrow-left opacity-0 transition-all duration-300 mr-2">←</span>
-  Previous
-</button>
+ <!-- Previous Button - Bottom Left -->
+  <button id="prevBtn" class="fixed left-8 bottom-8 w-40 py-4 text-lg bg-white/8 backdrop-blur-md text-white font-bold rounded-full border border-white/12 shadow-[0_0_10px_rgba(255,255,255,0.18)] hover:shadow-[0_0_18px_rgba(255,255,255,0.28)] hover:scale-105 transition-all duration-200 flex justify-center items-center gap-2 z-50">
+    <span class="arrow-left opacity-0 transition-all duration-300">←</span>
+    Previous
+  </button>
 
-<button id="nextBtn" class="w-28 py-2 text-sm bg-white/8 backdrop-blur-md text-white font-bold rounded-full border border-white/12 shadow-[0_0_10px_rgba(255,255,255,0.18)] hover:shadow-[0_0_18px_rgba(255,255,255,0.28)] hover:scale-105 transition-all duration-200 flex justify-between items-center">
-  Next
-  <span class="arrow-right opacity-0 transition-all duration-300 ml-2">→</span>
-</button>
+  <!-- Next Button - Bottom Right -->
+  <button id="nextBtn" class="fixed right-8 bottom-8 w-40 py-4 text-lg bg-white/8 backdrop-blur-md text-white font-bold rounded-full border border-white/12 shadow-[0_0_10px_rgba(255,255,255,0.18)] hover:shadow-[0_0_18px_rgba(255,255,255,0.28)] hover:scale-105 transition-all duration-200 flex justify-center items-center gap-2 z-50">
+    Next
+    <span class="arrow-right opacity-0 transition-all duration-300">→</span>
+  </button>
     </div>
   </div>
 
