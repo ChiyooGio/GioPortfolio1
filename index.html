@@ -284,16 +284,16 @@ section.active { opacity: 1; transform: translateY(0); }
 </main>
 
   <div id="floatNav" class="fixed flex flex-col items-center gap-2 z-50" style="right:1.5rem;bottom:1.5rem;">
-<!-- Navigation Buttons Fixed at Bottom Right (Stacked, Consistent) -->
-<div class="fixed right-8 bottom-8 flex flex-col gap-3 z-50 h-20">
+<!-- Navigation Buttons Fixed at Bottom Right (Side by Side) -->
+<div class="fixed right-8 bottom-8 flex gap-3 z-50">
   <!-- Previous Button -->
-  <button id="prevBtn" class="w-28 py-2 text-sm bg-white/8 backdrop-blur-md text-white font-bold rounded-full border border-white/12 shadow-[0_0_8px_rgba(255,255,255,0.18)] hover:shadow-[0_0_12px_rgba(255,255,255,0.28)] hover:scale-105 transition-all duration-200 flex justify-center items-center gap-1 opacity-100 invisible">
+  <button id="prevBtn" class="w-28 py-2 text-sm bg-white/8 backdrop-blur-md text-white font-bold rounded-full border border-white/12 shadow-[0_0_8px_rgba(255,255,255,0.18)] hover:shadow-[0_0_12px_rgba(255,255,255,0.28)] hover:scale-105 transition-all duration-200 flex justify-center items-center gap-1 invisible">
     <span class="arrow-left opacity-0 transition-all duration-300">←</span>
     Previous
   </button>
 
   <!-- Next Button -->
-  <button id="nextBtn" class="w-28 py-2 text-sm bg-white/8 backdrop-blur-md text-white font-bold rounded-full border border-white/12 shadow-[0_0_8px_rgba(255,255,255,0.18)] hover:shadow-[0_0_12px_rgba(255,255,255,0.28)] hover:scale-105 transition-all duration-200 flex justify-center items-center gap-1 opacity-100 invisible">
+  <button id="nextBtn" class="w-28 py-2 text-sm bg-white/8 backdrop-blur-md text-white font-bold rounded-full border border-white/12 shadow-[0_0_8px_rgba(255,255,255,0.18)] hover:shadow-[0_0_12px_rgba(255,255,255,0.28)] hover:scale-105 transition-all duration-200 flex justify-center items-center gap-1 invisible">
     Next
     <span class="arrow-right opacity-0 transition-all duration-300">→</span>
   </button>
@@ -323,7 +323,7 @@ function showPage(id) {
   const btn = document.querySelector(`.nav-btn[data-target="${id}"]`);
   if(btn) btn.classList.add('active');
 
-  // Update buttons visibility using visibility, not display
+  // Buttons visibility without layout shift
   if(index === 0){
     prevBtn.style.visibility = 'hidden';
     nextBtn.style.visibility = 'visible';
